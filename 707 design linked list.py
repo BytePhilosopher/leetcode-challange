@@ -49,6 +49,7 @@ class MyLinkedList:
         self.head.next = self.tail
         self.tail.prev = self.head
         self.size = 0
+        
 
     def get(self, index):
         if index < 0 or index >= self.size:
