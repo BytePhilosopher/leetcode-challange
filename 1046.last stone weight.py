@@ -43,3 +43,28 @@ class Solution(object):
 
         # return last stone or 0 if none
         return -stones[0] if stones else 0
+
+# import heapq
+# class Solution(object):
+#     def findKthLargest(self, nums, k):
+#         nums = [-s for s in nums]   # negate all numbers to simulate max-heap
+#         heapq.heapify(nums)         # turn nums into a heap
+
+#         for i in range(k-1):
+#             heapq.heappop(nums)
+        
+
+#         return  -nums[0]          # top of heap is kth largest
+
+import heapq
+
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        # build a min-heap with first k elements
+        heap = nums[:k]
+        heapq.heapify(heap)
+        # for each remaining number, if it's bigger than the smallest in heap, replace it
+        for x in nums[k:]:
+            if x > heap[0]:
+                heapq.heapreplace(heap, x)  # pop+push in O(log k)
+        return heap[0]
