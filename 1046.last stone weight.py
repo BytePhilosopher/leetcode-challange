@@ -23,6 +23,7 @@
 
 # Input: stones = [1]
 # Output: 1
+
 import heapq
 
 class Solution(object):
