@@ -15,6 +15,7 @@
 # Output
 # [null, 1, -1, -3]
 
+
 # Explanation
 # NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
 # numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1
